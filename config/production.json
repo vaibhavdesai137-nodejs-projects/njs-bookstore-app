@@ -1,7 +1,7 @@
 {
     "dbConfig": {
-        "dbHost": "ds019058.mlab.com",
-        "dbPort": "19058",
+        "dbHost": "ds047612.mlab.com",
+        "dbPort": "47612",
         "dbName": "njs-bookstore-app-db",
         "dbUser": "dbuser",
         "dbPassword": "dbpassword"
