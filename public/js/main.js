@@ -9,7 +9,6 @@ function deleteBook(id, csrfToken) {
             "_csrf": csrfToken
         },
         success: function () {
-            alert("deleted book");
             location.reload();
         }
     });
@@ -27,7 +26,6 @@ function deleteCategory(id, csrfToken) {
             "_csrf": csrfToken
         },
         success: function () {
-            alert("deleted category");
             location.reload();
         }
     });

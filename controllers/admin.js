@@ -141,8 +141,6 @@ module.exports = function (router) {
 
         var id = req.params.id;
 
-        console.log("DELETING>>>> " + id);
-
         Book.remove({
             _id: id
         }, function (err) {
@@ -150,8 +148,8 @@ module.exports = function (router) {
             if (err) throw err;
 
             req.flash('success', 'Book successfully deleted');
-            res.location('/admin/books');
-            res.redirect('/admin/books');
+            res.writeHead(200);
+            res.end();
 
         });
 
@@ -249,8 +247,6 @@ module.exports = function (router) {
 
         var id = req.params.id;
 
-        console.log("DELETING CAT >>>> " + id);
-
         Category.remove({
             _id: id
         }, function (err) {
@@ -258,8 +254,8 @@ module.exports = function (router) {
             if (err) throw err;
 
             req.flash('success', 'Category successfully deleted');
-            res.location('/admin/categories');
-            res.redirect('/admin/categories');
+            res.writeHead(200);
+            res.end();
 
         });
 
