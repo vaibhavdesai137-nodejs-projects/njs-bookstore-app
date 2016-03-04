@@ -1,0 +1,11 @@
+{>"layouts/admin" /} 
+
+{<body} 
+
+    <h1>Admin</h1>
+    <p>This is the admin area</p>
+    <hr>
+
+    <br>
+    <br> 
+{/body}

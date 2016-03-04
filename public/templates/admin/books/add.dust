@@ -1,0 +1,50 @@
+{>"layouts/admin" /} 
+
+{<body} 
+
+    <div class="col-md-6">
+       
+        <br>
+        <h1 class="text-center">Add Book</h1>
+        <p class="text-center">Form inputs not validated :D</p>
+        
+        <form method="post" action="/admin/books">
+            <div class="form-group">
+                <label>Book Title</label>
+                <input type="text" name="bookTitle" value="{.bookTitle}" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Book Category</label>
+                <select class="form-control" name="bookCategory">
+                    <option value="default">Select a category</option>
+                    {#categories}
+                        <option value="{.title}">{.title}</option>
+                    {/categories}
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Book Description</label>
+                <textarea name="bookDesc" rows="5" class="form-control">{.bookDesc}</textarea>
+            </div>
+            <div class="form-group">
+                <label>Book Author</label>
+                <input type="text" name="bookAuthor" value="{.bookAuthor}" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Book Publisher</label>
+                <input type="text" name="bookPublisher" value="{.bookPublisher}" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Book Price</label>
+                <input type="text" name="bookPrice" value="{.bookPrice}" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Book Cover</label>
+                <input type="text" name="bookCover" value="{.bookCover}" class="form-control">
+            </div>
+            <input type="hidden" name="_csrf" value="{_csrf}">
+            <button type="submit" class="btn btn-info">Add</button>
+        </form>
+    </div>
+    
+{/body}

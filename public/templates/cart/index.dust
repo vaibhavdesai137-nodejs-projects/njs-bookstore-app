@@ -1,0 +1,45 @@
+{>"layouts/master" /} 
+
+{<body} 
+
+    <h1 class="text-center">All Books</h1>
+    <hr>
+
+    <div class="row">
+        <div class="col-md-3 book">
+            <a href="/books/details/1"><img class="img-thumbnail" src='/images/mongo1.jpg'></a>
+            <h4>The Definitive Guide To MongoDB</h4>
+            <div class="price"><span>$19.99</span></div>
+            <br>
+            <a href="#" class="btn btn-primary btn-sm">More Info</a> &nbsp;&nbsp;
+            <a href="#" class="btn btn-primary btn-sm">Add To Cart</a>
+        </div>
+        <div class="col-md-3 book">
+            <a href="/books/details/1"><img class="img-thumbnail" src='/images/mongo2.jpg'></a>
+            <h4>The Definitive Guide To MongoDB</h4>
+            <div class="price"><span>$19.99</span></div>
+            <br>
+            <a href="#" class="btn btn-primary btn-sm">More Info</a> &nbsp;&nbsp;
+            <a href="#" class="btn btn-primary btn-sm">Add To Cart</a>
+        </div>
+        <div class="col-md-3 book">
+            <a href="/books/details/1"><img class="img-thumbnail" src='/images/mongo3.jpg'></a>
+            <h4>The Definitive Guide To MongoDB</h4>
+            <div class="price"><span>$19.99</span></div>
+            <br>
+            <a href="#" class="btn btn-primary btn-sm">More Info</a> &nbsp;&nbsp;
+            <a href="#" class="btn btn-primary btn-sm">Add To Cart</a>
+        </div>
+        <div class="col-md-3 book">
+            <a href="/books/details/1"><img class="img-thumbnail" src='/images/mongo1.jpg'></a>
+            <h4>The Definitive Guide To MongoDB</h4>
+            <div class="price"><span>$19.99</span></div>
+            <br>
+            <a href="#" class="btn btn-primary btn-sm">More Info</a> &nbsp;&nbsp;
+            <a href="#" class="btn btn-primary btn-sm">Add To Cart</a>
+        </div>
+    </div>
+
+    <br>
+    <br> 
+{/body}

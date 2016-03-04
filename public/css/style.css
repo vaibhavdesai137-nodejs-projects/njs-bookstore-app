@@ -1,0 +1,38 @@
+body {
+    margin-top: 50px;
+}
+
+.logo {
+    font-size: 30px;
+    font-weight: bold;
+    color: green;
+}
+
+.book {
+    text-align: center;
+}
+
+.book h4 {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    color: #666;
+}
+
+.price span {
+    border: 1px solid #333;
+    color: #666;
+    background-color: #fff;
+    border-color: #337ab7;
+    border-radius: 50%;
+    padding: 10px;
+}
+
+.book-details ul {
+    list-style: none;
+}
+
+.book-details ul li {
+    padding-bottom: 5px;
+    padding-left: 0px;
+}
+

@@ -1,0 +1,52 @@
+
+// start mongo
+sudo ./mongod --directoryperdb --dbpath /Users/vaidesai/Development/mongodb/data/db/ --logpath /Users/vaidesai/Development/mongodb/log/mongodb.log --logappend -rest
+
+// run mongo shell
+./mongo
+
+// create DB
+use njs-bookstore-app-db;
+show dbs;
+
+// create users
+db.createUser({
+    user: "dbuser",
+    pwd: "dbpassword",
+    roles: [{
+        role: "readWrite", 
+        db: "njs-bookstore-app-db" 
+    }]
+});
+
+// create collection
+db.books.drop();
+db.categories.drop();
+db.createCollection('books');
+db.createCollection('categories');
+show collections;
+
+// add records
+db.categories.insert({"title": "Databases"});
+db.categories.insert({"title": "NodeJS"});
+
+db.books.insert({
+    "title": "The Definitive Guide To MongoDB",
+    "desc": "The Definitive Guide to MongoDB, Second Edition, is updated for the latest version and includes all of the latest MongoDB features, including the aggregation framework introduced in version 2.2 and hashed indexes in version 2.4. MongoDB is the most popular of the Big Data NoSQL database technologies, and it's still growing. David Hows from 10gen, along with experienced MongoDB authors Peter Membrey and Eelco Plugge, provide their expertise and experience in teaching you everything you need to know to become a MongoDB pro.",
+    "category": "Databases",
+    "author": "David Hows",
+    "publisher": "Apress",
+    "price": "19.99",
+    "cover": "mongo1.jpg"
+});
+
+db.posts.insert({
+    "author": "Vaibhav Desai",
+    "title": "Post2",
+    "category": "Food",
+    "content": "Lorem",
+    "date": ISODate()
+});
+
+db.posts.find();
+db.posts.find().pretty();

@@ -1,0 +1,21 @@
+{>"layouts/admin" /} 
+
+{<body} 
+
+    <div class="col-md-6">
+        
+        <br>
+        <h1 class="text-center">Add Category</h1>
+        <p class="text-center">Form inputs not validated :D</p>
+        
+        <form method="post" action="/admin/categories">
+            <div class="form-group">
+                <label>Category Title</label>
+                <input type="text" name="categoryTitle" value="{.categoryTitle}" class="form-control">
+            </div>
+            <input type="hidden" name="_csrf" value="{_csrf}">
+            <button type="submit" class="btn btn-info">Add</button>
+        </form>
+    </div>
+    
+{/body}

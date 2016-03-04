@@ -1,0 +1,46 @@
+{>"layouts/admin" /} 
+
+{<body} 
+
+    <div class="col-md-6">
+
+        <br>
+        <h1 class="text-center">Edit Book</h1>
+        <p class="text-center">Form inputs not validated :D</p>
+
+        <form method="post" action="/admin/books/edit/{book._id}">
+            <div class="form-group">
+                <label>Book Title</label>
+                <input type="text" name="bookTitle" value="{book.title}" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Book Category</label>
+                <select class="form-control" name="bookCategory">
+                    <option value="default">Select a category</option>
+                    {#categories}
+                        <option value="{.title}" {@eq key=book.category value=.title} selected="true"{/eq}>{.title}</option>
+                    {/categories}
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Book Description</label>
+                <textarea name="bookDesc" rows="5" class="form-control">{book.desc}</textarea>
+            </div>
+            <div class="form-group">
+                <label>Book Author</label>
+                <input type="text" name="bookAuthor" value="{book.author}" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Book Publisher</label>
+                <input type="text" name="bookPublisher" value="{book.publisher}" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Book Price</label>
+                <input type="text" name="bookPrice" value="{book.price}" class="form-control">
+            </div>
+            <input type="hidden" name="_csrf" value="{_csrf}">
+            <button type="submit" class="btn btn-info">Save</button>
+        </form>
+    </div>
+
+{/body}
