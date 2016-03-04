@@ -7,28 +7,34 @@
         <p>This is the where the admin can manage categories</p>
     </div>
 
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Title</th>
-                <th>Actions</th>
-            </tr>
-        </thead>    
-        <tbody>
-            {#categories}
-            <tr>
-                <td>{._id}</td>
-                <td>{.title}</td>
-                <td>
-                    <a href="/admin/categories/edit/{._id}" class="btn btn-primary btn-sm"><i class="fa fa-pencil"> Edit</i></a>
-                    &nbsp;&nbsp;
-                    <a href="javascript:deleteCategory('{._id}', '{_csrf}')" class="btn btn-danger btn-sm"><i class="fa fa-trash"> Delete</i></a>
-                </td>
-            </tr>
-            {/categories}
-        </tbody>
-    </table>
+    {?categories}
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>    
+            <tbody>
+                {#categories}
+                <tr>
+                    <td>{._id}</td>
+                    <td>{.title}</td>
+                    <td>
+                        <a href="/admin/categories/edit/{._id}" class="btn btn-primary btn-sm"><i class="fa fa-pencil"> Edit</i></a>
+                        &nbsp;&nbsp;
+                        <a href="javascript:deleteCategory('{._id}', '{_csrf}')" class="btn btn-danger btn-sm"><i class="fa fa-trash"> Delete</i></a>
+                    </td>
+                </tr>
+                {/categories}
+            </tbody>
+        </table>
+    {:else}
+        <br>
+        <p>No categories found. Add a new category using the button below</p>
+        <br>
+    {/categories}
 
     <input type="hidden" name="_csrf" id="_csrf" value="{_csrf}">
    

@@ -7,30 +7,36 @@
         <p>This is the where the admin can manage books</p>
     </div>
 
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Title</th>
-                <th>Category</th>
-                <th>Actions</th>
-            </tr>
-        </thead>    
-        <tbody>
-            {#books}
-            <tr>
-                <td>{._id}</td>
-                <td>{.title}</td>
-                <td>{.category}</td>
-                <td>
-                    <a href="/admin/books/edit/{._id}" class="btn btn-primary btn-sm"><i class="fa fa-pencil"> Edit</i></a>
-                    &nbsp;&nbsp;
-                    <a href="javascript:deleteBook('{._id}', '{_csrf}')" class="btn btn-danger btn-sm"><i class="fa fa-trash"> Delete</i></a>
-                </td>
-            </tr>
-            {/books}
-        </tbody>
-    </table>
+    {?books}
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Category</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>    
+            <tbody>
+                {#books}
+                <tr>
+                    <td>{._id}</td>
+                    <td>{.title}</td>
+                    <td>{.category}</td>
+                    <td>
+                        <a href="/admin/books/edit/{._id}" class="btn btn-primary btn-sm"><i class="fa fa-pencil"> Edit</i></a>
+                        &nbsp;&nbsp;
+                        <a href="javascript:deleteBook('{._id}', '{_csrf}')" class="btn btn-danger btn-sm"><i class="fa fa-trash"> Delete</i></a>
+                    </td>
+                </tr>
+                {/books}
+            </tbody>
+        </table>
+    {:else}
+        <br>
+        <p>No books found. Add a new book using the button below</p>
+        <br>
+    {/books}
 
     <input type="hidden" name="_csrf" id="_csrf" value="{_csrf}">
     

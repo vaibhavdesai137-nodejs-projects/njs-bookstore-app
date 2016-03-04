@@ -4,16 +4,22 @@
 
     <h1 class="text-center">All Books</h1>
     
-    {#books}
-        <div class="col-md-3 book">
-            <a href="/books/details/{._id}"><img class="img-thumbnail" src='/images/{.cover}'></a>
-            <h4>{.title}</h4>
-            <p>{.shortDesc}</p>
-            <div class="price"><span>${.price}</span></div>
-            <br>
-            <a href="/books/details/{._id}" class="btn btn-primary btn-sm">Details</a> &nbsp;&nbsp;
-            <a href="#" class="btn btn-primary btn-sm">Add To Cart</a>
-        </div>
+    {?books}
+        {#books}
+            <div class="col-md-3 book">
+                <a href="/books/details/{._id}"><img class="img-thumbnail" src='/images/{.cover}'></a>
+                <h4>{.title}</h4>
+                <p>{.shortDesc}</p>
+                <div class="price"><span>${.price}</span></div>
+                <br>
+                <a href="/books/details/{._id}" class="btn btn-primary btn-sm">Details</a> &nbsp;&nbsp;
+                <a href="#" class="btn btn-primary btn-sm">Add To Cart</a>
+            </div>
+        {/books}
+    {:else}
+        <br>
+        <p>Sorry, no books found</p>
+        <br>
     {/books}
         
     <br><br><br><br> 
