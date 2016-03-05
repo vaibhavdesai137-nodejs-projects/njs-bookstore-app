@@ -36,3 +36,6 @@ body {
     padding-left: 0px;
 }
 
+.img-thumbnail {
+    height: 350px;
+}

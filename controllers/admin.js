@@ -3,6 +3,21 @@
 var Book = require('./../models/bookModel');
 var Category = require('./../models/categoryModel');
 
+var availableBookCovers = [
+    "mongo1.jpg",
+    "mongo2.jpg",
+    "mongo3.jpg",
+    "mongo4.jpg",
+    "node1.jpg",
+    "node2.jpg",
+    "node3.jpg",
+    "node4.jpg",
+    "php1.jpg",
+    "php2.jpg",
+    "php3.jpg",
+    "php4.jpg"
+];
+
 module.exports = function (router) {
 
     // dashboard
@@ -56,6 +71,10 @@ module.exports = function (router) {
         var bookPublisher = req.body.bookPublisher && req.body.bookPublisher.trim();
         var bookPrice = req.body.bookPrice && req.body.bookPrice.trim();
         var bookCover = req.body.bookCover && req.body.bookCover.trim();
+
+        if (availableBookCovers.indexOf(bookCover) < 0) {
+            bookCover = "default.jpg";
+        }
 
         var newBook = new Book({
             title: bookTitle,
@@ -113,6 +132,10 @@ module.exports = function (router) {
         var bookPublisher = req.body.bookPublisher && req.body.bookPublisher.trim();
         var bookPrice = req.body.bookPrice && req.body.bookPrice.trim();
         var bookCover = req.body.bookCover && req.body.bookCover.trim();
+
+        if (availableBookCovers.indexOf(bookCover) < 0) {
+            bookCover = "default.jpg";
+        }
 
         Book.update({
             _id: id
