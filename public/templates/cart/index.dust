@@ -7,7 +7,7 @@
     
     <hr>
     
-    {?cart.books}
+    {?cart.items}
         <table class="table table-striped">
             <thead>
                 <tr>
@@ -18,21 +18,21 @@
                 </tr>
             </thead>    
             <tbody>
-                {#cart.books}
+                {#cart.items}
                 <tr>
-                    <td><a href="/books/details/{._id}">{.title}</a></td>
+                    <td><a href="/books/details/{.id}">{.title}</a></td>
                     <td>{.qty}</td>
                     <td>${@math key="{.price}" method="multiply" operand="{.qty}" /}</td>
                     <td>
-                        <a href="#" class="btn btn-danger btn-sm"><i class="fa fa-trash"> Remove</i></a>
+                        <a href="javascript:deleteItemFromCart('{.id}', '{_csrf}')"  class="btn btn-danger btn-sm"><i class="fa fa-trash"> Remove</i></a>
                     </td>
                 </tr>
-                {/cart.books}
+                {/cart.items}
             </tbody>
         </table>
         <div class="row">
             <div class="col-md-6">
-                <h4>Total: <strong>{._total}</strong></h4>
+                <h4>Total: <strong>{cart.globalTotal}</strong></h4>
             </div>
             <div class="col-md-6"></div>
         </div>
@@ -40,7 +40,7 @@
         <br>
         <p>You have not added any items to the cart yet</p>
         <br>
-    {/cart.books}
+    {/cart.items}
     
     <br>
     <br> 
