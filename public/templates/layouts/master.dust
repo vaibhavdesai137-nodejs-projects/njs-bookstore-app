@@ -30,6 +30,9 @@
                 <ul class="nav navbar-nav">
                     <li {@eq key=activeNav value="books"}class="active"{/eq}><a href="/books">Books</a></li>
                     <li {@eq key=activeNav value="cart"}class="active"{/eq}><a href="/cart">Cart</a></li>
+                    <li {@eq key=activeNav value="about"}class="active"{/eq}><a href="/about">About</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
                     <li><a href="/admin">Admin</a></li>
                 </ul>
             </div>

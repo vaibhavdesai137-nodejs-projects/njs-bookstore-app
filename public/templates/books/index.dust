@@ -2,7 +2,7 @@
 
 {<body} 
 
-    <h1 class="text-center">All Books</h1>
+    <br><br>
     
     {?books}
         {#books}
@@ -10,10 +10,12 @@
                 <a href="/books/details/{._id}"><img class="img-thumbnail" src='/images/{.cover}'></a>
                 <h4>{.title}</h4>
                 <p>{.shortDesc}</p>
-                <div class="price"><span>${.price}</span></div>
+                <div class="price">
+                    <span>${.price}</span>
+                    &nbsp;&nbsp;
+                    <a href="/books/details/{._id}" class="btn btn-primary btn-sm">Details</a></div>
                 <br>
-                <a href="/books/details/{._id}" class="btn btn-primary btn-sm">Details</a> &nbsp;&nbsp;
-                <a href="#" class="btn btn-primary btn-sm">Add To Cart</a>
+                
             </div>
         {/books}
     {:else}

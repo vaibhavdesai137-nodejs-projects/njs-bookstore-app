@@ -2,17 +2,18 @@
 
 {<body} 
 
-    <div class="well text-center">
+    <div class="well">
         <h1>Manage Categories</h1>
-        <p>This is the where the admin can manage categories</p>
+        <p>You can add, edit and delete categories here</p>
     </div>
 
     {?categories}
-        <table class="table table-striped">
+        <br>
+        <table class="table table-striped" style="width:60%">
             <thead>
                 <tr>
-                    <th>ID</th>
-                    <th>Title</th>
+                    <th>Category ID</th>
+                    <th>Category Title</th>
                     <th>Actions</th>
                 </tr>
             </thead>    

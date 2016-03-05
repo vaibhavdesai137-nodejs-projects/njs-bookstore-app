@@ -1,0 +1,13 @@
+{>"layouts/master" /} 
+
+{<body} 
+
+    <br><br>
+    <h1>About Us</h1>
+    <br>
+    <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum consequatur vitae perspiciatis impedit rerum. Rem quod sequi nesciunt nostrum, ratione quidem suscipit similique, ut ullam earum natus nisi? Doloremque, architecto.</p>
+    <br>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum consequatur vitae perspiciatis impedit rerum. Rem quod sequi nesciunt nostrum, ratione quidem suscipit similique, ut ullam earum natus nisi? Doloremque, architecto. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt qui, accusamus! Incidunt quasi perferendis blanditiis ex distinctio nesciunt provident nulla recusandae veniam repellendus! Ad impedit, minus soluta, provident voluptas temporibus.</p>
+
+<br><br><br><br> 
+{/body}

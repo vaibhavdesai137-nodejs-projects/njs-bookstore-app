@@ -2,9 +2,16 @@
 
 {<body} 
 
-    <h1>Admin</h1>
-    <p>This is the admin area</p>
-    <hr>
+    <div class="well">
+        <h1>Site Admin</h1>
+        <p class="lead">This is the where the admin can manage books and categories</p>
+        <br>
+        <div class="div">
+            <a href="/admin/books" class="btn btn-info btn-sm">Manage Books</a>
+            &nbsp;&nbsp;
+            <a href="/admin/categories" class="btn btn-info btn-sm">Manage Categories</a>
+        </div>
+    </div>
 
     <br>
     <br> 

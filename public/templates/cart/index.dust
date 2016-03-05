@@ -2,44 +2,46 @@
 
 {<body} 
 
-    <h1 class="text-center">All Books</h1>
+    <br><br>
+    <h1>Your Cart</h1>
+    
     <hr>
-
-    <div class="row">
-        <div class="col-md-3 book">
-            <a href="/books/details/1"><img class="img-thumbnail" src='/images/mongo1.jpg'></a>
-            <h4>The Definitive Guide To MongoDB</h4>
-            <div class="price"><span>$19.99</span></div>
-            <br>
-            <a href="#" class="btn btn-primary btn-sm">More Info</a> &nbsp;&nbsp;
-            <a href="#" class="btn btn-primary btn-sm">Add To Cart</a>
+    
+    {?cart.books}
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Book</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                    <th></th>
+                </tr>
+            </thead>    
+            <tbody>
+                {#cart.books}
+                <tr>
+                    <td><a href="/books/details/{._id}">{.title}</a></td>
+                    <td>{.qty}</td>
+                    <td>${@math key="{.price}" method="multiply" operand="{.qty}" /}</td>
+                    <td>
+                        <a href="#" class="btn btn-danger btn-sm"><i class="fa fa-trash"> Remove</i></a>
+                    </td>
+                </tr>
+                {/cart.books}
+            </tbody>
+        </table>
+        <div class="row">
+            <div class="col-md-6">
+                <h4>Total: <strong>{._total}</strong></h4>
+            </div>
+            <div class="col-md-6"></div>
         </div>
-        <div class="col-md-3 book">
-            <a href="/books/details/1"><img class="img-thumbnail" src='/images/mongo2.jpg'></a>
-            <h4>The Definitive Guide To MongoDB</h4>
-            <div class="price"><span>$19.99</span></div>
-            <br>
-            <a href="#" class="btn btn-primary btn-sm">More Info</a> &nbsp;&nbsp;
-            <a href="#" class="btn btn-primary btn-sm">Add To Cart</a>
-        </div>
-        <div class="col-md-3 book">
-            <a href="/books/details/1"><img class="img-thumbnail" src='/images/mongo3.jpg'></a>
-            <h4>The Definitive Guide To MongoDB</h4>
-            <div class="price"><span>$19.99</span></div>
-            <br>
-            <a href="#" class="btn btn-primary btn-sm">More Info</a> &nbsp;&nbsp;
-            <a href="#" class="btn btn-primary btn-sm">Add To Cart</a>
-        </div>
-        <div class="col-md-3 book">
-            <a href="/books/details/1"><img class="img-thumbnail" src='/images/mongo1.jpg'></a>
-            <h4>The Definitive Guide To MongoDB</h4>
-            <div class="price"><span>$19.99</span></div>
-            <br>
-            <a href="#" class="btn btn-primary btn-sm">More Info</a> &nbsp;&nbsp;
-            <a href="#" class="btn btn-primary btn-sm">Add To Cart</a>
-        </div>
-    </div>
-
+    {:else}
+        <br>
+        <p>You have not added any items to the cart yet</p>
+        <br>
+    {/cart.books}
+    
     <br>
     <br> 
 {/body}
