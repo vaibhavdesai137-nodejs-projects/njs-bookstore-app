@@ -3,20 +3,20 @@
 
     "express": {
         "view cache": false,
-        "view engine": "js",
-        "views": "path:./.build/templates"
+        "view engine": "dust",
+        "views": "path:./public/templates"
     },
 
 
 
     "view engines": {
-        "js": {
+        "dust": {
             "module": "engine-munger",
             "renderer": {
-                "method": "js",
+                "method": "dust",
                 "arguments": [
                     {
-                        "cache": true
+                        "cache": false
                     },
                     {
                         "views": "config:express.views",
@@ -30,7 +30,6 @@
     },
 
 
-
     "i18n": {
         "contentPath": "path:./locales",
         "fallback": "en-US"
@@ -39,6 +38,7 @@
 
     "specialization": {},
 
+    
     "middleware": {
 
 
