@@ -4,6 +4,11 @@ var express = require('express');
 var kraken = require('kraken-js');
 var db = require('./lib/db');
 
+var flash = require('connect-flash');
+var session = require('express-session');
+var expressMessages = require('express-messages');
+
+
 var options, app;
 
 /*
@@ -19,6 +24,17 @@ options = {
 
 app = module.exports = express();
 app.use(kraken(options));
+
+app.use(session({
+    secret: 'secret',
+    saveUninitialized: true,
+    resave: true
+}));
+app.use(flash());
+app.use(function (req, res, next) {
+    res.locals.messages = expressMessages(req, res);
+    next();
+});
 
 app.on('start', function () {
     console.log('Application ready to serve requests.');
