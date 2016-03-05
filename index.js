@@ -2,9 +2,6 @@
 
 var express = require('express');
 var kraken = require('kraken-js');
-var flash = require('connect-flash');
-var lusca = require('lusca');
-var expressMessages = require('express-messages');
 var db = require('./lib/db');
 
 var options, app;
@@ -22,17 +19,6 @@ options = {
 
 app = module.exports = express();
 app.use(kraken(options));
-
-// flash
-app.use(flash());
-app.use(function (req, res, next) {
-    res.locals.messages = expressMessages(req, res);
-    next();
-});
-
-app.use(lusca({
-    csrf: false
-}));
 
 app.on('start', function () {
     console.log('Application ready to serve requests.');

@@ -50,7 +50,6 @@
             }
         },
 
-
         "static": {
             "module": {
                 "arguments": ["path:./.build"]
@@ -62,6 +61,15 @@
                 "arguments": [{
                     "directory": "path:./controllers"
                 }]
+            }
+        },
+
+        "flash": {
+            "priority": 91,
+            "enabled": true,
+            "module": {
+                "name": "connect-flash",
+                "method": "flash"
             }
         }
 
