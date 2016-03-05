@@ -131,12 +131,7 @@ module.exports = function (router) {
         var bookAuthor = req.body.bookAuthor && req.body.bookAuthor.trim();
         var bookPublisher = req.body.bookPublisher && req.body.bookPublisher.trim();
         var bookPrice = req.body.bookPrice && req.body.bookPrice.trim();
-        var bookCover = req.body.bookCover && req.body.bookCover.trim();
-
-        if (availableBookCovers.indexOf(bookCover) < 0) {
-            bookCover = "default.jpg";
-        }
-
+        
         Book.update({
             _id: id
         }, {
@@ -151,7 +146,7 @@ module.exports = function (router) {
 
             if (err) throw err;
 
-            req.flash('success', 'Book successfully added');
+            req.flash('success', 'Book successfully saved');
             res.location('/admin/books');
             res.redirect('/admin/books');
 
