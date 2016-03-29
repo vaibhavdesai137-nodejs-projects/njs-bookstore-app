@@ -140,8 +140,7 @@ module.exports = function (router) {
             desc: bookDesc,
             author: bookAuthor,
             publisher: bookPublisher,
-            price: bookPrice,
-            cover: bookCover
+            price: bookPrice
         }, function (err) {
 
             if (err) throw err;
